@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/jokes")
 public class JokesController {
 
-    private final JokesService jokeService;
+    private final JokesService jokesService;
 
-    public JokesController(JokesService jokeService){
-        this.jokeService = jokeService;
+    public JokesController(JokesService jokesService){
+        this.jokesService = jokesService;
     }
 
     @GetMapping("/random")
     public String getJoke(Model model){
-        model.addAttribute("joke",jokeService.getJoke());
+        model.addAttribute("joke",jokesService.getJoke());
         return "jokes";
     }
 
