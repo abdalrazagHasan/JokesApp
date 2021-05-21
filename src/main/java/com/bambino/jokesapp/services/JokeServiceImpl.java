@@ -1,15 +1,16 @@
 package com.bambino.jokesapp.services;
 
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class JokeServiceImpl implements JokesService {
 
     private final ChuckNorrisQuotes quotes;
 
-    public JokeServiceImpl(){
-        quotes = new ChuckNorrisQuotes();
+    public JokeServiceImpl(ChuckNorrisQuotes quotes){
+        this.quotes = quotes;
     }
 
     @Override

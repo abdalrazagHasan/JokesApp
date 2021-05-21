@@ -14,7 +14,6 @@ public class JokesController {
 
     private final JokesService jokeService;
 
-    @Autowired
     public JokesController(JokesService jokeService){
         this.jokeService = jokeService;
     }
